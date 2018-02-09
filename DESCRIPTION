@@ -4,7 +4,7 @@ Version: 0.0.0.1000
 Authors@R: c(person("James", "Balamuta", 
                    email = "balamut2@illinois.edu", role = c("aut", "cre")))
 Description: Provides access to GitHub API v3.0 using the gh package backend.
-Depends: R (>= 3.4.3)
+Depends: R (>= 3.4.2)
 Imports: gh
 License: GPL (>= 2)
 Encoding: UTF-8
