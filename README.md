@@ -1,6 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Travis-CI Build
+Status](https://travis-ci.org/coatless/ghapi.svg?branch=master)](https://travis-ci.org/coatless/ghapi)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/ghapi)](http://www.r-pkg.org/pkg/ghapi)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ghapi)](https://cran.r-project.org/package=ghapi)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/coatless/ghapi/master.svg)](https://codecov.io/github/coatless/ghapi?branch=master)
+
 # `ghapi`
 
 The goal of `ghapi` is to provide a full-featured interface to GitHub’s
