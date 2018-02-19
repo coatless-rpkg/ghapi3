@@ -3,9 +3,6 @@
 #' Makes a repository to store code in.
 #'
 #' @param org                  Organization name.
-#' @param team_id              The id of the team that will be granted access to
-#'                             this repository. This is only valid when creating
-#'                             a repository in an organization.
 #' @param name                 The name of the repository.
 #' @param description          A short description of the repository.
 #' @param homepage             A URL with more information about the repository.
@@ -25,6 +22,9 @@
 #' @param has_wiki             Either `TRUE` to enable the wiki for this
 #'                             repository or `FALSE` to disable it.
 #'                             Default: `TRUE`.
+#' @param team_id              The id of the team that will be granted access to
+#'                             this repository. This is only valid when creating
+#'                             a repository in an organization.
 #' @param auto_init	           Pass `TRUE` to create an initial commit with
 #'                             empty `README`. Default: `FALSE`.
 #' @param gitignore_template   Desired language or platform [.gitignore template](https://github.com/github/gitignore)
@@ -103,3 +103,94 @@ create_org_repo = function(org, name,
             allow_merge_commit = allow_merge_commit, allow_rebase_merge = allow_rebase_merge)
   }
 }
+
+#' List Self Repos
+#'
+#' Retrieve information on the repositories created or held by yourself.
+#'
+#' @param visibility  Can be one of `"all"`, `"public"`, or `"private"`. Default: `"all"`
+#' @param affiliation Comma-separated list of values. Can include: `"owner"`,
+#'                    `"collaborator"`, `"organization_member"`.
+#'                    Default: `"owner,collaborator,organization_member"`.
+#' @param type        Can be one of `"all"`, `"public"`, or `"private"`.
+#'                    Default: `"all"`. Will cause a `422`` error if used in the
+#'                    same request as `visibility` or `affiliation`.
+#' @param sort        Can be one of `"created"`, `"updated"`, `"pushed"`, `"full_name"`.
+#'                    Default: `"full_name"`.
+#' @param direction   Can be one of `"asc"` or `"desc"`. Default: `"desc"`
+#'
+#' @seealso [`get_user_repos_list`], [`get_org_repos_list`]
+#' @references
+#' <https://developer.github.com/v3/repos/#list-your-repositories>
+get_self_repos_list = function(visibility = "all",
+                               affiliation = "owner,collaborator,organization_member",
+                               type = "all",
+                               sort = "full_name",
+                               direction = "desc") {
+
+
+  get_gh("GET /user/repos", visibility = visibility, affiliation = affiliation,
+         type = type, sort = sort, direction = direction)
+
+}
+
+
+#' List User Repositories
+#'
+#' Generates a list of user repositories
+#'
+#' @param username  Name of the GitHub user to retrieve repos for.
+#' @param type      Can be one of `"all"`, `"owner"`, or `"member"`.
+#'                  Default: `"owner"`.
+#' @param sort      Can be one of `"created"`, `"updated"`, `"pushed"`, `"full_name"`.
+#'                  Default: `"full_name"`.
+#' @param direction Can be one of `"asc"` or `"desc"`. Default: `"desc"`
+#'
+#' @seealso [`get_self_repos_list`], [`get_org_repos_list`]
+#' @references
+#' <https://developer.github.com/v3/repos/#list-user-repositories>
+get_user_repos_list = function(username, type = "owner", sort = "full_name",
+                               direction = "desc") {
+
+  get_gh("GET /users/:username/repos", username = username,
+         type = type, sort = sort, direction = direction)
+}
+
+
+#' List Organization Repositories
+#'
+#' Generates a list of organization repositories
+#'
+#' @param org  Name of the GitHub Organization to retrieve repos for.
+#' @param type Can be one of `"all"`, `"public"`, `"private"`, `"forks"`,
+#'             `"sources"`, `"member"`. Default: `"all"`.
+#'
+#' @seealso [`get_self_repos_list`], [`get_user_repos_list`]
+#' @references
+#' <https://developer.github.com/v3/repos/#list-organization-repositories>
+get_org_repos_list = function(org, type = "all") {
+
+  get_gh("GET /orgs/:org/repos", org = org, type = type)
+
+}
+
+#' Retrieve list of contributors for a repo
+#'
+#' Obtains a list of people who have contributed code or text to a
+#' repository
+#'
+#' @param owner Name of the person or organization who owns the repository.
+#' @param repo  Name of the repository.
+#' @param anon  Either `TRUE` to include anonymous contributors in results or
+#'              `FALSE` to not include anonymous contributors. Default:
+#'              `TRUE`.
+#'
+#' @references
+#' <https://developer.github.com/v3/repos/#list-contributors>
+get_contributors_list = function(owner, repo, anon = TRUE) {
+  get_gh("GET /repos/:owner/:repo/contributors", owner = owner,
+         repo = repo, anon = anon)
+}
+
+
+

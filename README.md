@@ -36,6 +36,8 @@ We have support presently for:
 | check\_org\_public\_membership  |
 | create\_org\_invitation\_email  |
 | create\_org\_invitation\_ghname |
+| create\_org\_repo               |
+| create\_user\_repo              |
 | get\_org\_invitations           |
 | get\_org\_members\_list         |
 | get\_org\_repos                 |
