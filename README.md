@@ -28,18 +28,22 @@ devtools::install_github("coatless/ghapi")
 
 We have support presently for:
 
-| Implemented Functions          |
-| :----------------------------- |
-| add\_org\_member               |
-| add\_team\_member              |
-| check\_org\_public\_membership |
-| get\_org\_members\_list        |
-| get\_org\_repos                |
-| get\_org\_team\_details        |
-| get\_org\_teams\_list          |
-| remove\_org\_member            |
-| remove\_team\_member           |
-| update\_org\_member\_role      |
+| Implemented Functions           |
+| :------------------------------ |
+| add\_org\_member                |
+| add\_org\_team\_member          |
+| check\_org\_private\_membership |
+| check\_org\_public\_membership  |
+| create\_org\_invitation\_email  |
+| create\_org\_invitation\_ghname |
+| get\_org\_invitations           |
+| get\_org\_members\_list         |
+| get\_org\_repos                 |
+| get\_org\_team\_details         |
+| get\_org\_teams\_list           |
+| remove\_org\_member             |
+| remove\_org\_team\_member       |
+| update\_org\_member\_role       |
 
 ## License
 

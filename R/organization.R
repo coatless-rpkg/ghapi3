@@ -118,8 +118,36 @@ remove_org_member = function(org, username) {
 #' @export
 update_org_member_role = add_org_member
 
+
+#' @section Private Membership:
+#' This function is a work in progress.
 #' @references
-#' <>
+#' GitHub API Documentation reference for private membership check
+#' <https://developer.github.com/v3/orgs/members/#check-membership>
+#' @rdname org_member
+#' @export
+check_org_private_membership = function(org, username) {
+  # By default, this returns an empty string "" if it succeeds...
+  # A 404 error if it doesn't.
+  res = tryCatch({
+    get_gh("GET /orgs/:org/members/:username",
+           org = org, username = username)
+  },
+  error = function(e) {
+    FALSE
+  })
+
+
+  if(is.logical(res)) {
+    return(res)
+  }
+
+  TRUE
+}
+
+#' @references
+#' GitHub API Documentation reference for public membership check
+#' <https://developer.github.com/v3/orgs/members/#check-public-membership>
 #' @rdname org_member
 #' @export
 check_org_public_membership = function(org, username) {
@@ -140,4 +168,102 @@ check_org_public_membership = function(org, username) {
   }
 
   TRUE
+}
+
+#' Create Organization Invitations
+#'
+#' Invite multiple people to an organization using their GitHub user ID or their
+#' e-mail address.
+#'
+#' @inheritParams get_org_repos
+#' @param invitee_id GitHub user ID for the person you are inviting.
+#'                   Not required if you provide email.
+#' @param email      Email address of the person you are inviting, which can be
+#'                   an existing GitHub user. Not required if you provide invitee_id.
+#' @param role       Specify role for new member. Can be one of:
+#' @param team_ids   Specify IDs for the teams you want to invite new members to.
+#'
+#' @details
+#'
+#' This set of API bindings is a WIP and requires additional values.
+#'
+#' @section Role:
+#'
+#' Specify `role` for new member. Can be one of:
+#'
+#' - `admin`
+#'      - Organization owners with full administrative rights to the
+#'        organization and complete access to all repositories and teams.
+#' - `direct_member`
+#'      - Non-owner organization members with ability to see other members
+#'        and join teams by invitation.
+#' - `billing_manager`
+#'      - Non-owner organization members with ability to manage the billing
+#'        settings of your organization.
+#'
+#' @references
+#' GitHub API Documentation reference for public membership check
+#' <https://developer.github.com/v3/orgs/members/#create-organization-invitation>
+#' @rdname org-invites
+#' @export
+create_org_invitation_ghname = function(org,
+                                        invitee_id,
+                                        role = c("admin", "direct_member", "billing_manager"),
+                                        team_ids = NULL) {
+  if (!is.null(team_ids)) {
+    post_gh(
+      "POST /orgs/:org/invitations",
+      org = org,
+      invitee_id = invitee_id,
+      role = role,
+      team_ids = team_ids
+    )
+  } else {
+    post_gh(
+      "POST /orgs/:org/invitations",
+      org = org,
+      invitee_id = invitee_id,
+      role = role
+    )
+
+  }
+}
+
+#' @rdname org-invites
+#' @export
+create_org_invitation_email =  function(org,
+                                        email,
+                                        role = c("admin", "direct_member", "billing_manager"),
+                                        team_ids = NULL) {
+  if (!is.null(team_ids)) {
+    post_gh(
+      "POST /orgs/:org/invitations",
+      org = org,
+      email = email,
+      role = role,
+      team_ids = team_ids
+    )
+  } else {
+    post_gh(
+      "POST /orgs/:org/invitations",
+      org = org,
+      email = email,
+      role = role
+    )
+  }
+
+}
+
+#' List Organization Invitations
+#'
+#' Retrieves all pending organization invitations
+#'
+#' @inheritParams get_org_repos
+#'
+#' @references
+#' GitHub API Documentation reference for public membership check
+#' <https://developer.github.com/v3/orgs/members/#list-pending-organization-invitations>
+#' @export
+get_org_invitations = function(org) {
+  get_gh("GET /orgs/:org/invitations", org = org)
 }

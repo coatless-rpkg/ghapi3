@@ -19,3 +19,7 @@ get_gh = function(...) {
 put_gh = function(...) {
   gh(...)
 }
+
+post_gh = function(...) {
+  gh(...)
+}

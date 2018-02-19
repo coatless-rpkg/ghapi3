@@ -4,6 +4,7 @@
 \alias{add_org_member}
 \alias{remove_org_member}
 \alias{update_org_member_role}
+\alias{check_org_private_membership}
 \alias{check_org_public_membership}
 \title{Invite, Remove, or Modify User Membership in an Organization}
 \usage{
@@ -12,6 +13,8 @@ add_org_member(org, username, role = c("member", "admin"))
 remove_org_member(org, username)
 
 update_org_member_role(org, username, role = c("member", "admin"))
+
+check_org_private_membership(org, username)
 
 check_org_public_membership(org, username)
 }
@@ -40,10 +43,19 @@ old or on a paid plan, the limit is 500 invitations per 24 hour period.
     - The user will become a non-owner member of the organization.
 }
 
+\section{Private Membership}{
+
+This function is a work in progress.
+}
+
 \references{
 <https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership>
 
 <https://developer.github.com/v3/orgs/members/#remove-a-member>
 
-<>
+GitHub API Documentation reference for private membership check
+<https://developer.github.com/v3/orgs/members/#check-membership>
+
+GitHub API Documentation reference for public membership check
+<https://developer.github.com/v3/orgs/members/#check-public-membership>
 }

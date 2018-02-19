@@ -13,7 +13,7 @@ get_org_teams_list = function(org) {
   get_gh("GET /orgs/:org/teams", org = org)
 }
 
-#' @inheritParams add_team_member
+#' @inheritParams add_org_team_member
 #' @references
 #' <https://developer.github.com/v3/teams/#get-team>
 #' @rdname team-listing
@@ -43,7 +43,7 @@ get_org_team_details = function(id) {
 #' <https://developer.github.com/v3/teams/members/#add-or-update-team-membership>
 #' @rdname team-membership
 #' @export
-add_team_member = function(id,
+add_org_team_member = function(id,
                            username,
                            role = c("member", "maintainer")) {
   # Require type
@@ -65,8 +65,17 @@ add_team_member = function(id,
 #' <https://developer.github.com/v3/teams/members/#remove-team-membership>
 #' @export
 #' @rdname team-membership
-remove_team_member = function(id, username) {
+remove_org_team_member = function(id, username) {
   delete_gh("PUT /teams/:id/memberships/:username",
             id = id,
             username = username)
+}
+
+#' List pending team invitations
+#'
+#' @inheritParams add_org_team_member
+#' @references
+#' <https://developer.github.com/v3/teams/members/#list-pending-team-invitations>
+get_org_team_invitations = function(id) {
+  get_gh("GET /teams/:id/invitations", id = id)
 }
