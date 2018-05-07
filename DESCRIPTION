@@ -1,4 +1,4 @@
-Package: ghapi
+Package: ghapi3
 Title: GitHub v3 API Implementation
 Version: 0.0.0.2000
 Authors@R: c(person("James", "Balamuta", 

@@ -1,4 +1,4 @@
 library(testthat)
-library(ghapi)
+library(ghapi3)
 
-test_check("ghapi")
+test_check("ghapi3")
