@@ -192,5 +192,39 @@ get_contributors_list = function(owner, repo, anon = TRUE) {
          repo = repo, anon = anon)
 }
 
+#' Transfer a repository
+#'
+#' A transfer request will need to be accepted by the new owner when
+#' transferring a personal repository to another user. The response will
+#' contain the original owner, and the transfer will continue asynchronously.
+#' For more details on the requirements to transfer personal
+#' and organization-owned repositories, see
+#' [about repository transfers](https://help.github.com/articles/about-repository-transfers/).
+#'
+#' @param owner     The username or organization name that controls the
+#'                  repository.
+#' @param repo      The name of the repository to transfer.
+#' @param new_owner The username or organization name the repository will be
+#'                  transferred to.
+#' @param team_id   ID of the team or teams to add to the repository.
+#'                  Teams can only be added to organization-owned repositories.
+#'
+#' @references
+#' <https://developer.github.com/v3/repos/#transfer-a-repository>
+repo_transfer = function(owner, repo, new_owner, team_id = NA) {
+  if( is.na(team_id) ) {
+    gh("POST /repos/:owner/:repo/transfer",
+       owner = owner,
+       repo = repo,
+       new_owner = new_owner)
+  } else {
+    gh("POST /repos/:owner/:repo/transfer",
+       owner = owner,
+       repo = repo,
+       new_owner = new_owner,
+       team_id = team_id)
+  }
+}
+
 
 
