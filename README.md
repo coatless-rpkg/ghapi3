@@ -38,13 +38,19 @@ We have support presently for:
 | create\_org\_invitation\_ghname |
 | create\_org\_repo               |
 | create\_user\_repo              |
+| get\_contributors\_list         |
 | get\_org\_invitations           |
 | get\_org\_members\_list         |
 | get\_org\_repos                 |
+| get\_org\_repos\_list           |
 | get\_org\_team\_details         |
+| get\_org\_team\_invitations     |
 | get\_org\_teams\_list           |
+| get\_self\_repos\_list          |
+| get\_user\_repos\_list          |
 | remove\_org\_member             |
 | remove\_org\_team\_member       |
+| transfer\_repo                  |
 | update\_org\_member\_role       |
 
 ## License
