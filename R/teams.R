@@ -73,7 +73,12 @@ remove_org_team_member = function(id, username) {
 
 #' List pending team invitations
 #'
+#' Retrieves a list of all the pending invitations to a given team
+#'
 #' @inheritParams add_org_team_member
+#'
+#' @export
+#'
 #' @references
 #' <https://developer.github.com/v3/teams/members/#list-pending-team-invitations>
 get_org_team_invitations = function(id) {

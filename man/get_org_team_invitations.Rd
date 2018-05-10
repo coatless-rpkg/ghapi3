@@ -10,7 +10,7 @@ get_org_team_invitations(id)
 \item{id}{Team ID Number.}
 }
 \description{
-List pending team invitations
+Retrieves a list of all the pending invitations to a given team
 }
 \references{
 <https://developer.github.com/v3/teams/members/#list-pending-team-invitations>
