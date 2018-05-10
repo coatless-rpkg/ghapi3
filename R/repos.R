@@ -119,6 +119,7 @@ create_org_repo = function(org, name,
 #'                    Default: `"full_name"`.
 #' @param direction   Can be one of `"asc"` or `"desc"`. Default: `"desc"`
 #'
+#' @export
 #' @seealso [`get_user_repos_list`], [`get_org_repos_list`]
 #' @references
 #' <https://developer.github.com/v3/repos/#list-your-repositories>
@@ -146,6 +147,7 @@ get_self_repos_list = function(visibility = "all",
 #'                  Default: `"full_name"`.
 #' @param direction Can be one of `"asc"` or `"desc"`. Default: `"desc"`
 #'
+#' @export
 #' @seealso [`get_self_repos_list`], [`get_org_repos_list`]
 #' @references
 #' <https://developer.github.com/v3/repos/#list-user-repositories>
@@ -165,6 +167,7 @@ get_user_repos_list = function(username, type = "owner", sort = "full_name",
 #' @param type Can be one of `"all"`, `"public"`, `"private"`, `"forks"`,
 #'             `"sources"`, `"member"`. Default: `"all"`.
 #'
+#' @export
 #' @seealso [`get_self_repos_list`], [`get_user_repos_list`]
 #' @references
 #' <https://developer.github.com/v3/repos/#list-organization-repositories>
@@ -185,6 +188,7 @@ get_org_repos_list = function(org, type = "all") {
 #'              `FALSE` to not include anonymous contributors. Default:
 #'              `TRUE`.
 #'
+#' @export
 #' @references
 #' <https://developer.github.com/v3/repos/#list-contributors>
 get_contributors_list = function(owner, repo, anon = TRUE) {
@@ -209,9 +213,10 @@ get_contributors_list = function(owner, repo, anon = TRUE) {
 #' @param team_id   ID of the team or teams to add to the repository.
 #'                  Teams can only be added to organization-owned repositories.
 #'
+#' @export
 #' @references
 #' <https://developer.github.com/v3/repos/#transfer-a-repository>
-repo_transfer = function(owner, repo, new_owner, team_id = NA) {
+transfer_repo = function(owner, repo, new_owner, team_id = NA) {
   if( is.na(team_id) ) {
     gh("POST /repos/:owner/:repo/transfer",
        owner = owner,
