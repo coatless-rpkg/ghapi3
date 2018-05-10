@@ -221,13 +221,15 @@ transfer_repo = function(owner, repo, new_owner, team_id = NA) {
     gh("POST /repos/:owner/:repo/transfer",
        owner = owner,
        repo = repo,
-       new_owner = new_owner)
+       new_owner = new_owner,
+       .send_headers = c("Accept" = "application/vnd.github.nightshade-preview+json"))
   } else {
     gh("POST /repos/:owner/:repo/transfer",
        owner = owner,
        repo = repo,
        new_owner = new_owner,
-       team_id = team_id)
+       team_id = team_id,
+       .send_headers = c("Accept" = "application/vnd.github.nightshade-preview+json"))
   }
 }
 
