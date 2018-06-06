@@ -50,7 +50,8 @@
 #' <https://developer.github.com/v3/repos/#create>
 #' @rdname repo-creation
 #' @export
-create_user_repo = function(name, description = "This repository has been created with ghapi",
+create_user_repo = function(name,
+                            description = "This repository has been created with ghapi",
                             homepage = "https://github.com/coatless/ghapi",
                             private = FALSE,
                             has_issues = TRUE, has_projects = TRUE,
@@ -62,7 +63,7 @@ create_user_repo = function(name, description = "This repository has been create
                             allow_merge_commit = TRUE,
                             allow_rebase_merge = TRUE
                             ) {
-  post_gh("POST /user/repos", org = org, name = name,
+  post_gh("POST /user/repos", name = name,
           description = description, homepage = homepage, private = private,
           has_issues = has_issues, has_projects = has_projects, has_wiki = has_wiki,
           auto_init = auto_init, gitignore_template = gitignore_template,
