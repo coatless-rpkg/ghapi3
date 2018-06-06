@@ -5,7 +5,7 @@
 #'
 #' @param ... Additional parameters
 #' @details
-#' Wrapper fucntion to `gh` for more control over package options
+#' Wrapper function to `gh` for more control over package options
 #' @noMd
 #' @importFrom gh gh
 delete_gh = function(...) {

@@ -13,5 +13,5 @@ delete_gh(...)
 Intermediary wrapper into the `gh` packages `gh` function.
 }
 \details{
-Wrapper fucntion to `gh` for more control over package options
+Wrapper function to `gh` for more control over package options
 }
