@@ -30,6 +30,7 @@ We have support presently for:
 
 | Implemented Functions           |
 | :------------------------------ |
+| add\_collaborator               |
 | add\_org\_member                |
 | add\_org\_team\_member          |
 | check\_org\_private\_membership |
@@ -38,7 +39,9 @@ We have support presently for:
 | create\_org\_invitation\_ghname |
 | create\_org\_repo               |
 | create\_user\_repo              |
+| get\_collaborator\_list         |
 | get\_contributors\_list         |
+| get\_emoji\_list                |
 | get\_org\_invitations           |
 | get\_org\_members\_list         |
 | get\_org\_repos                 |
@@ -48,6 +51,7 @@ We have support presently for:
 | get\_org\_teams\_list           |
 | get\_self\_repos\_list          |
 | get\_user\_repos\_list          |
+| remove\_collaborator            |
 | remove\_org\_member             |
 | remove\_org\_team\_member       |
 | transfer\_repo                  |
