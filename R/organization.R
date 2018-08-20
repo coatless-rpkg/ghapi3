@@ -10,9 +10,10 @@
 #' @references
 #' <https://developer.github.com/v3/repos/#list-organization-repositories>
 #' @export
+#' @seealso [`get_self_repos_list`], [`get_user_repos_list`]
 #' @examples
-#' get_org_repos("stat385uiuc", "all")
-get_org_repos = function(org,
+#' get_org_repos_list("stat385uiuc", "all")
+get_org_repos_list = function(org,
                          type = c("all", "public", "private", "forks",
                                   "sources", "member")) {
   # Require type
@@ -20,7 +21,6 @@ get_org_repos = function(org,
 
   get_gh("GET /orgs/:org/repos", org = org, type = type)
 }
-
 
 #' Retrieve Membership list in an Organization
 #'
@@ -175,7 +175,7 @@ check_org_public_membership = function(org, username) {
 #' Invite multiple people to an organization using their GitHub user ID or their
 #' e-mail address.
 #'
-#' @inheritParams get_org_repos
+#' @inheritParams get_org_repos_list
 #' @param invitee_id GitHub user ID for the person you are inviting.
 #'                   Not required if you provide email.
 #' @param email      Email address of the person you are inviting, which can be
@@ -258,7 +258,7 @@ create_org_invitation_email =  function(org,
 #'
 #' Retrieves all pending organization invitations
 #'
-#' @inheritParams get_org_repos
+#' @inheritParams get_org_repos_list
 #'
 #' @references
 #' GitHub API Documentation reference for public membership check

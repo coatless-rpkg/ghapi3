@@ -44,7 +44,6 @@ We have support presently for:
 | get\_emoji\_list                |
 | get\_org\_invitations           |
 | get\_org\_members\_list         |
-| get\_org\_repos                 |
 | get\_org\_repos\_list           |
 | get\_org\_team\_details         |
 | get\_org\_team\_invitations     |

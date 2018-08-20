@@ -8,8 +8,8 @@
 create_org_invitation_ghname(org, invitee_id, role = c("admin",
   "direct_member", "billing_manager"), team_ids = NULL)
 
-create_org_invitation_email(org, email, role = c("admin", "direct_member",
-  "billing_manager"), team_ids = NULL)
+create_org_invitation_email(org, email, role = c("admin",
+  "direct_member", "billing_manager"), team_ids = NULL)
 }
 \arguments{
 \item{org}{Name of the organization}
