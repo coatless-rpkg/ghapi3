@@ -38,6 +38,7 @@ We have support presently for:
 | create\_org\_invitation\_email  |
 | create\_org\_invitation\_ghname |
 | create\_org\_repo               |
+| create\_tag                     |
 | create\_user\_repo              |
 | get\_collaborator\_list         |
 | get\_contributors\_list         |
