@@ -33,8 +33,10 @@ We have support presently for:
 | add\_collaborator               |
 | add\_org\_member                |
 | add\_org\_team\_member          |
+| browse\_commit\_diff            |
 | check\_org\_private\_membership |
 | check\_org\_public\_membership  |
+| create\_commit\_diff\_url       |
 | create\_org\_invitation\_email  |
 | create\_org\_invitation\_ghname |
 | create\_org\_repo               |
