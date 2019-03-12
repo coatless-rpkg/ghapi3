@@ -50,9 +50,17 @@
 #' <https://developer.github.com/v3/repos/#create>
 #' @rdname repo-creation
 #' @export
+#' @examples
+#' \donttest{
+#' # Creates a public repository based off of username/reponame
+#' create_user_repo("toadie")
+#'
+#' # Creates a private repository
+#' create_user_repo("toadie", private = TRUE)
+#' }
 create_user_repo = function(name,
-                            description = "This repository has been created with ghapi",
-                            homepage = "https://github.com/coatless/ghapi",
+                            description = "This repository has been created with ghapi3",
+                            homepage = "https://github.com/coatless/ghapi3",
                             private = FALSE,
                             has_issues = TRUE, has_projects = TRUE,
                             has_wiki = TRUE,
@@ -74,8 +82,8 @@ create_user_repo = function(name,
 #' @rdname repo-creation
 #' @export
 create_org_repo = function(org, name,
-                           description = "This repository has been created with ghapi",
-                           homepage = "https://github.com/coatless/ghapi",
+                           description = "This repository has been created with ghapi3",
+                           homepage = "https://github.com/coatless/ghapi3",
                            private = FALSE,
                            has_issues = TRUE, has_projects = TRUE,
                            has_wiki = TRUE,
@@ -159,24 +167,6 @@ get_user_repos_list = function(username, type = "owner", sort = "full_name",
          type = type, sort = sort, direction = direction)
 }
 
-
-#' List Organization Repositories
-#'
-#' Generates a list of organization repositories
-#'
-#' @param org  Name of the GitHub Organization to retrieve repos for.
-#' @param type Can be one of `"all"`, `"public"`, `"private"`, `"forks"`,
-#'             `"sources"`, `"member"`. Default: `"all"`.
-#'
-#' @export
-#' @seealso [`get_self_repos_list`], [`get_user_repos_list`]
-#' @references
-#' <https://developer.github.com/v3/repos/#list-organization-repositories>
-get_org_repos_list = function(org, type = "all") {
-
-  get_gh("GET /orgs/:org/repos", org = org, type = type)
-
-}
 
 #' Retrieve list of contributors for a repo
 #'
