@@ -9,6 +9,10 @@ get_emoji_list()
 \description{
 Lists all the emojis available to use on GitHub.
 }
+\examples{
+# Retrieve the list of emoji
+get_emoji_list()
+}
 \references{
 <https://developer.github.com/v3/emojis/#emojis>
 }
