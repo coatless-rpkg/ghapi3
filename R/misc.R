@@ -8,8 +8,10 @@
 #' <https://developer.github.com/v3/emojis/#emojis>
 #'
 #' @examples
+#' \dontrun{
 #' # Retrieve the list of emoji
 #' get_emoji_list()
+#' }
 get_emoji_list = function() {
   get_gh("GET /emojis")
 }
