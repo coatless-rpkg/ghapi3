@@ -7,6 +7,7 @@
 #' @param type The kind of repository to list. Can be one of:
 #'             `"all"`, `"public"`, `"private"`, `"forks"`, `"sources"`, `"member"`.
 #'             Default: `"all"`
+#'
 #' @references
 #' <https://developer.github.com/v3/repos/#list-organization-repositories>
 #' @export
