@@ -10,8 +10,10 @@ get_emoji_list()
 Lists all the emojis available to use on GitHub.
 }
 \examples{
+\dontrun{
 # Retrieve the list of emoji
 get_emoji_list()
+}
 }
 \references{
 <https://developer.github.com/v3/emojis/#emojis>
