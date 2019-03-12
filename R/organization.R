@@ -13,7 +13,9 @@
 #' @export
 #' @seealso [`get_self_repos_list`], [`get_user_repos_list`]
 #' @examples
+#' \dontrun{
 #' get_org_repos_list("stat385uiuc", "all")
+#' }
 get_org_repos_list = function(org,
                          type = c("all", "public", "private", "forks",
                                   "sources", "member")) {

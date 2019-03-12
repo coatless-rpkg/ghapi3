@@ -19,7 +19,9 @@ Obtains repositories that belong to an organization according to
 different levels.
 }
 \examples{
+\dontrun{
 get_org_repos_list("stat385uiuc", "all")
+}
 }
 \references{
 <https://developer.github.com/v3/repos/#list-organization-repositories>
