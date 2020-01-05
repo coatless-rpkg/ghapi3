@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+## ghapi3
+
 <!-- badges: start -->
 
 [![R build
@@ -11,8 +13,6 @@ downloads](http://cranlogs.r-pkg.org/badges/ghapi3)](http://www.r-pkg.org/pkg/gh
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/coatless/ghapi3/master.svg)](https://codecov.io/github/coatless/ghapi3?branch=master)
 <!-- badges: end -->
-
-## ghapi3
 
 The goal of `ghapi3` is to provide a full-featured interface to GitHub’s
 API v3.0. To do this, we use the [`gh`](https://github.com/r-lib/gh) *R*

@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+## ghapi3
 
 <!-- badges: start -->
 [![R build
@@ -20,8 +21,6 @@ status](https://github.com/coatless/ghapi3/workflows/R-CMD-check/badge.svg)](htt
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ghapi3)](https://cran.r-project.org/package=ghapi3)
 [![Coverage Status](https://img.shields.io/codecov/c/github/coatless/ghapi3/master.svg)](https://codecov.io/github/coatless/ghapi3?branch=master)
 <!-- badges: end -->
-
-## ghapi3
 
 The goal of `ghapi3` is to provide a full-featured interface to GitHub's API v3.0.
 To do this, we use the [`gh`](https://github.com/r-lib/gh) _R_ package to 
