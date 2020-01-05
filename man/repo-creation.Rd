@@ -5,21 +5,39 @@
 \alias{create_org_repo}
 \title{Creates a Repository in an Organization or User Space}
 \usage{
-create_user_repo(name,
+create_user_repo(
+  name,
   description = "This repository has been created with ghapi3",
-  homepage = "https://github.com/coatless/ghapi3", private = FALSE,
-  has_issues = TRUE, has_projects = TRUE, has_wiki = TRUE,
-  auto_init = FALSE, gitignore_template = "R",
-  license_template = "gpl-3.0", allow_squash_merge = TRUE,
-  allow_merge_commit = TRUE, allow_rebase_merge = TRUE)
+  homepage = "https://github.com/coatless/ghapi3",
+  private = FALSE,
+  has_issues = TRUE,
+  has_projects = TRUE,
+  has_wiki = TRUE,
+  auto_init = FALSE,
+  gitignore_template = "R",
+  license_template = "gpl-3.0",
+  allow_squash_merge = TRUE,
+  allow_merge_commit = TRUE,
+  allow_rebase_merge = TRUE
+)
 
-create_org_repo(org, name,
+create_org_repo(
+  org,
+  name,
   description = "This repository has been created with ghapi3",
-  homepage = "https://github.com/coatless/ghapi3", private = FALSE,
-  has_issues = TRUE, has_projects = TRUE, has_wiki = TRUE,
-  team_id = NULL, auto_init = FALSE, gitignore_template = "R",
-  license_template = "gpl-3.0", allow_squash_merge = TRUE,
-  allow_merge_commit = TRUE, allow_rebase_merge = TRUE)
+  homepage = "https://github.com/coatless/ghapi3",
+  private = FALSE,
+  has_issues = TRUE,
+  has_projects = TRUE,
+  has_wiki = TRUE,
+  team_id = NULL,
+  auto_init = FALSE,
+  gitignore_template = "R",
+  license_template = "gpl-3.0",
+  allow_squash_merge = TRUE,
+  allow_merge_commit = TRUE,
+  allow_rebase_merge = TRUE
+)
 }
 \arguments{
 \item{name}{The name of the repository.}

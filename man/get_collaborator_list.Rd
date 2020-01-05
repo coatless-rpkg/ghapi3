@@ -4,8 +4,7 @@
 \alias{get_collaborator_list}
 \title{List Collaborators}
 \usage{
-get_collaborator_list(owner, repo, affiliation = c("all", "outside",
-  "direct"))
+get_collaborator_list(owner, repo, affiliation = c("all", "outside", "direct"))
 }
 \arguments{
 \item{owner}{Name of the repository owner.}
