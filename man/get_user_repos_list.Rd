@@ -4,8 +4,12 @@
 \alias{get_user_repos_list}
 \title{List User Repositories}
 \usage{
-get_user_repos_list(username, type = "owner", sort = "full_name",
-  direction = "desc")
+get_user_repos_list(
+  username,
+  type = "owner",
+  sort = "full_name",
+  direction = "desc"
+)
 }
 \arguments{
 \item{username}{Name of the GitHub user to retrieve repos for.}

@@ -4,9 +4,13 @@
 \alias{get_self_repos_list}
 \title{List Self Repos}
 \usage{
-get_self_repos_list(visibility = "all",
-  affiliation = "owner,collaborator,organization_member", type = "all",
-  sort = "full_name", direction = "desc")
+get_self_repos_list(
+  visibility = "all",
+  affiliation = "owner,collaborator,organization_member",
+  type = "all",
+  sort = "full_name",
+  direction = "desc"
+)
 }
 \arguments{
 \item{visibility}{Can be one of `"all"`, `"public"`, or `"private"`. Default: `"all"`}

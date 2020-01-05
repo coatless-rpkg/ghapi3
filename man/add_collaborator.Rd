@@ -4,8 +4,12 @@
 \alias{add_collaborator}
 \title{Add a Collaborator to a Repository}
 \usage{
-add_collaborator(owner, repo, username, permission = c("push", "pull",
-  "admin"))
+add_collaborator(
+  owner,
+  repo,
+  username,
+  permission = c("push", "pull", "admin")
+)
 }
 \arguments{
 \item{owner}{Name of the repository owner.}

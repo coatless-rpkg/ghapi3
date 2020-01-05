@@ -4,8 +4,11 @@
 \alias{get_org_members_list}
 \title{Retrieve Membership list in an Organization}
 \usage{
-get_org_members_list(org, filter = c("all", "2fa_disabled"),
-  role = c("all", "admin", "member"))
+get_org_members_list(
+  org,
+  filter = c("all", "2fa_disabled"),
+  role = c("all", "admin", "member")
+)
 }
 \arguments{
 \item{org}{Name of the organization}

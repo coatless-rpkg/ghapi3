@@ -6,7 +6,8 @@
 \alias{ghapi3-package}
 \title{ghapi3: GitHub v3 API Implementation}
 \description{
-Provides access to GitHub API v3.0 using the gh package backend.
+Provides access to select GitHub API v3.0 endpoints using 
+    the 'gh' package backend.
 }
 \details{
 This package requires users have access to a GitHub Personal Access Token (PAT)
@@ -14,13 +15,13 @@ This package requires users have access to a GitHub Personal Access Token (PAT)
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/coatless/ghapi}
-  \item Report bugs at \url{https://github.com/coatless/ghapi/issues}
+  \item \url{https://github.com/coatless/ghapi3}
+  \item Report bugs at \url{https://github.com/coatless/ghapi3/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} [copyright holder]
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 Other contributors:
 \itemize{
@@ -28,3 +29,4 @@ Other contributors:
 }
 
 }
+\keyword{internal}

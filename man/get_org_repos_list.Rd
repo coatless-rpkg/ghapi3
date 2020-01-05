@@ -4,8 +4,10 @@
 \alias{get_org_repos_list}
 \title{Retrieve Repositories in an Organization}
 \usage{
-get_org_repos_list(org, type = c("all", "public", "private", "forks",
-  "sources", "member"))
+get_org_repos_list(
+  org,
+  type = c("all", "public", "private", "forks", "sources", "member")
+)
 }
 \arguments{
 \item{org}{Name of the organization}
