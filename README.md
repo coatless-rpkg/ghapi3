@@ -1,30 +1,33 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis-CI Build
-Status](https://travis-ci.org/coatless/ghapi3.svg?branch=master)](https://travis-ci.org/coatless/ghapi3)
+<!-- badges: start -->
+
+[![R build
+status](https://github.com/coatless/ghapi3/workflows/R-CMD-check/badge.svg)](https://github.com/coatless/ghapi3/actions)
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/ghapi3)](http://www.r-pkg.org/pkg/ghapi3)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ghapi3)](https://cran.r-project.org/package=ghapi3)
 [![Coverage
 Status](https://img.shields.io/codecov/c/github/coatless/ghapi3/master.svg)](https://codecov.io/github/coatless/ghapi3?branch=master)
+<!-- badges: end -->
 
-# `ghapi3`
+## ghapi3
 
 The goal of `ghapi3` is to provide a full-featured interface to GitHub’s
 API v3.0. To do this, we use the [`gh`](https://github.com/r-lib/gh) *R*
 package to access the GitHub API’s methods.
 
-## Installation
+### Installation
 
 You can install `ghapi3` from github with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("coatless/ghapi3")
+if(!requireNamespace("remotes", quietly = TRUE)) { install.packages("remotes") }
+remotes::install_github("coatless/ghapi3")
 ```
 
-## Implementation
+### Implementation
 
 We have support presently for:
 
@@ -36,11 +39,11 @@ We have support presently for:
 | browse\_commit\_diff            |
 | check\_org\_private\_membership |
 | check\_org\_public\_membership  |
-| create\_commit\_diff\_url       |
 | create\_org\_invitation\_email  |
 | create\_org\_invitation\_ghname |
 | create\_org\_repo               |
 | create\_tag                     |
+| create\_url\_commit\_diff       |
 | create\_user\_repo              |
 | get\_collaborator\_list         |
 | get\_contributors\_list         |
@@ -59,6 +62,6 @@ We have support presently for:
 | transfer\_repo                  |
 | update\_org\_member\_role       |
 
-## License
+### License
 
 GPL (\>= 2)
