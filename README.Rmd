@@ -14,11 +14,7 @@ knitr::opts_chunk$set(
 
 
 <!-- badges: start -->
-[![R build
-status](https://github.com/coatless/ghapi3/workflows/R-CMD-check/badge.svg)](https://github.com/coatless/ghapi3/actions)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/ghapi3)](http://www.r-pkg.org/pkg/ghapi3)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ghapi3)](https://cran.r-project.org/package=ghapi3)
-[![Coverage Status](https://img.shields.io/codecov/c/github/coatless/ghapi3/master.svg)](https://codecov.io/github/coatless/ghapi3?branch=master)
+[![R-CMD-check](https://github.com/coatless-rpkg/ghapi3/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/ghapi3/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## ghapi3
@@ -31,16 +27,18 @@ access the GitHub API's methods.
 
 You can install `ghapi3` from github with:
 
-```{r gh-installation, eval = FALSE}
+```r
 if(!requireNamespace("remotes", quietly = TRUE)) { install.packages("remotes") }
-remotes::install_github("coatless/ghapi3")
+remotes::install_github("coatless-rpkg/ghapi3")
 ```
 
 ### Implementation
 
 We have support presently for:
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
+
 # Must be in the environment... 
 library("ghapi3")
 
